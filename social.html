@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" style="display: inline-block; margin-bottom: 20px;">&larr; Zurück zur Übersicht</a>
+            <h1>Social Media Campaigning</h1>
+            <p>Hier zeige ich, wie ich Kampagnen für Social Media konzipiere und gestalte. Der Fokus liegt auf hoher Interaktionsrate und einer klaren visuellen Sprache.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="project-gallery">
+            <h3>Instagram Karussell-Posts</h3>
+            <p style="margin-bottom: 20px; color: #666;">Ein edukativer Post, der komplexe Informationen in leicht verdauliche Slides herunterbricht.</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveSlide(-1, 'myCarousel1')">&#10094;</button>
+                
+                <div class="carousel-track" id="myCarousel1">
+                    <img src="ig-carousel-1/Slide 1.jpg" alt="Slide 1" class="carousel-slide">
+                    <img src="ig-carousel-1/Slide 2.jpg" alt="Slide 2" class="carousel-slide">
+                    <img src="ig-carousel-1/Slide 3.jpg" alt="Slide 3" class="carousel-slide">
+                    <img src="ig-carousel-1/Slide 4.jpg" alt="Slide 4" class="carousel-slide">
+                    <img src="ig-carousel-1/Slide 5.jpg" alt="Slide 5" class="carousel-slide">
+                    <img src="ig-carousel-1/Slide 6.jpg" alt="Slide 6" class="carousel-slide">
+                </div>
+
+                <button class="carousel-btn next" onclick="moveSlide(1, 'myCarousel1')">&#10095;</button>
+            </div>
+
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveSlide(-1, 'myCarousel2')">&#10094;</button>
+                
+                <div class="carousel-track" id="myCarousel2">
+                    <img src="ig-carousel-2/slide1.jpg" alt="Slide 1" class="carousel-slide">
+                    <img src="ig-carousel-2/slide2.jpg" alt="Slide 2" class="carousel-slide">
+                    <img src="ig-carousel-2/slide3.jpg" alt="Slide 3" class="carousel-slide">
+                    <img src="ig-carousel-2/slide4.jpg" alt="Slide 4" class="carousel-slide">
+                    <img src="ig-carousel-2/slide5.jpg" alt="Slide 5" class="carousel-slide">
+                    <img src="ig-carousel-2/slide6.jpg" alt="Slide 6" class="carousel-slide">
+                </div>
+
+                <button class="carousel-btn next" onclick="moveSlide(1, 'myCarousel2')">&#10095;</button>
+            </div>
+
+        </section>
+
+        <section class="project-gallery" style="margin-top: 60px;">
+            <h3>YouTube Thumbnails</h3>
+            <p style="margin-bottom: 20px; color: #666;">Fokus auf Klickrate (CTR) und starke Kontraste.</p>
+            <img src="yt-thumbs/THUMB_Zardonic_x_HOFA.jpg" alt="YouTube Thumbnail" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <img src="yt-thumbs/Thumb_Professional_Keys_EN.jpg" alt="YouTube Thumbnail" style="width: 100%; max-width: 600px; border-radius: 8px;">
+        </section>
+
+        <section class="project-gallery" style="margin-top: 60px;">
+            <h3>Social Ads</h3>
+            <p style="margin-bottom: 20px; color: #666;">Fokus auf Klickrate (CTR) und starke Kontraste.</p>
+            <img src="social-ads/1zu1_Diploma_EN_Carlos_Quote.jpg" alt="Social Ad" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <img src="social-ads/FB_IG_1_1_Shuresenn_V9.jpg" alt="Social Ad" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <img src="social-ads/FB_IG_1zu1_Praesenz_WS_Sept24_1.jpg" alt="Social Ad" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <img src="social-ads/FB_IG_Diploma_Bachelor_ohne_Aktion_V2.jpg" alt="Social Ad" style="width: 100%; max-width: 600px; border-radius: 8px;">
+        </section>
+
+    </main>
+
+    <script>
+        function moveSlide(direction, carouselId) {
+            const track = document.getElementById(carouselId);
+            // Ermittelt die Breite eines einzelnen Bildes
+            const slideWidth = track.clientWidth; 
+            // Scrollt um exakt ein Bild nach links oder rechts
+            track.scrollLeft += direction * slideWidth;
+        }
+    </script>
+</body>
+</html>

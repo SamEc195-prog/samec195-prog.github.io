@@ -1,0 +1,186 @@
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --accent-color: #0056b3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    margin-top: 80px;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Neue Styles für die Bilder --- */
+.card-image {
+    width: 35%;
+    /* Wir definieren ein Seitenverhältnis (z.B. 3:2), damit der Platzhalter sichtbar ist */
+    aspect-ratio: 3 / 2; 
+    background-color: transparent; /* Hellgrau als Platzhalter */
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    
+    /* Diese Zeilen sind wichtig für später, wenn das echte Bild drin ist */
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    
+    /* Ein kleiner Text im Platzhalter (optional) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* --- Button Style --- */
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 8px 16px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #004494; /* Etwas dunkler beim Hovern */
+    text-decoration: none;
+    color: white;
+}
+
+/* --- Social Media Karussell --- */
+.carousel-container {
+    position: relative;
+    max-width: 500px; /* Typische Breite für Social Posts */
+    margin: 2.5rem auto;   /* Zentriert das Karussell */
+    border-radius: 8px;
+    overflow: hidden; /* Versteckt alles, was über den Rand hinausgeht */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto; /* Erlaubt horizontales Scrollen */
+    scroll-snap-type: x mandatory; /* Zwingt das Einrasten */
+    scroll-behavior: smooth; /* Weiches Scrollen beim Klick auf die Pfeile */
+    
+    /* Versteckt die Scrollbar für einen cleanen Look */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
+.carousel-slide {
+    flex: 0 0 100%; /* Jedes Bild nimmt 100% der Container-Breite ein */
+    width: 100%;
+    scroll-snap-align: center; /* Rastet in der Mitte ein */
+    /* Ideales Format für Instagram (4:5). Ändere es auf 1/1 für Quadrate */
+    aspect-ratio: 4 / 5; 
+    object-fit: cover;
+    background-color: #e0e0e0; /* Platzhalter-Farbe, falls das Bild lädt */
+}
+
+/* --- Karussell Buttons --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
