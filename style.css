@@ -1,7 +1,10 @@
+/* --- FARBEN & BASICS (Dark Minimalist) --- */
 :root {
-    --bg-color: #f9f9f9;
-    --text-color: #333;
-    --accent-color: #0056b3;
+    --bg-color: #0a0a0a; /* Fast tiefschwarz */
+    --text-color: #e0e0e0; /* Helles Grau für gute Lesbarkeit */
+    --heading-color: #ffffff; /* Reines Weiß für Überschriften */
+    --accent-color: #ffffff; /* Keine bunten Akzente mehr, nur Weiß/Grau */
+    --card-bg: #141414; /* Leichtes Grau für die Kacheln zur Abhebung */
 }
 
 * {
@@ -11,176 +14,293 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    /* Eine moderne, serifenlose Schrift, ähnlich wie im PDF */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Macht die Schrift schärfer */
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* --- TYPOGRAFIE (Groß & Fett) --- */
 header {
-    margin-top: 80px;
-    margin-bottom: 60px;
+    margin-top: 100px;
+    margin-bottom: 80px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 4.5rem; /* Riesige Überschrift */
+    font-weight: 800;
+    color: var(--heading-color);
+    line-height: 1;
+    letter-spacing: -2px; /* Etwas enger zusammen, für den Editorial-Look */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Optional: Macht es noch dominanter */
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    font-weight: bold;
+    font-size: 1.1rem;
+    color: #888; /* Dezentes Grau */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
     margin-bottom: 20px;
+    display: block;
 }
 
+header p {
+    font-size: 1.2rem;
+    max-width: 600px; /* Begrenzt die Textbreite wie im PDF */
+    color: #aaa;
+}
+
+/* --- SECTIONS & GRIDS --- */
 section {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
 }
 
 h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+    border-bottom: 1px solid #333; /* Harte, dunkle Linie statt weichem Grau */
+    padding-bottom: 20px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
+/* --- KACHELN (Kantig & Flach) --- */
 .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 0px; /* Spitze Ecken statt runder Ecken! */
+    border: 1px solid #222; /* Sehr subtiler Rahmen */
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-color: #555; /* Rahmen wird heller beim Hovern */
 }
 
-footer {
-    margin-top: 80px;
-    padding: 40px 0;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* --- Neue Styles für die Bilder --- */
+/* --- BILD-PLATZHALTER --- */
 .card-image {
-    width: 35%;
-    /* Wir definieren ein Seitenverhältnis (z.B. 3:2), damit der Platzhalter sichtbar ist */
-    aspect-ratio: 3 / 2; 
-    background-color: transparent; /* Hellgrau als Platzhalter */
-    border-radius: 4px;
-    margin-bottom: 2rem;
-    
-    /* Diese Zeilen sind wichtig für später, wenn das echte Bild drin ist */
-    background-size: contain;
-    background-position: left;
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    background-color: #2a2a2a; /* Dunkelgrauer Platzhalter */
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    
-    /* Ein kleiner Text im Platzhalter (optional) */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #888;
+    color: #555;
     font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- Button Style --- */
+/* --- BUTTONS (Dark Minimalist Update) --- */
 .button {
     display: inline-block;
-    margin-top: 25px;
-    padding: 8px 16px;
-    background-color: var(--accent-color);
-    color: white;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: transparent; /* Transparenter Hintergrund */
+    color: var(--heading-color); /* Weiße Schrift */
+    border: 1px solid var(--heading-color); /* Weißer, harter Rahmen */
+    border-radius: 0px; /* Keine runden Ecken! */
+    font-size: 0.85rem;
     font-weight: bold;
-    transition: background-color 0.2s;
+    text-transform: uppercase; /* Großbuchstaben für den Magazin-Look */
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 
 .button:hover {
-    background-color: #004494; /* Etwas dunkler beim Hovern */
+    background-color: var(--heading-color); /* Weißer Hintergrund beim Drüberfahren */
+    color: var(--bg-color); /* Schwarze Schrift beim Drüberfahren */
     text-decoration: none;
-    color: white;
 }
 
-/* --- Social Media Karussell --- */
+/* --- Social Media Karussell (Dark Minimalist Update) --- */
 .carousel-container {
     position: relative;
-    max-width: 500px; /* Typische Breite für Social Posts */
-    margin: 2.5rem auto;   /* Zentriert das Karussell */
-    border-radius: 8px;
-    overflow: hidden; /* Versteckt alles, was über den Rand hinausgeht */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 500px; 
+    margin: 0 auto;   
+    border-radius: 0px; /* Spitze Ecken passend zum Design! */
+    border: 1px solid #333; /* Harter, dunkler Rand */
+    overflow: hidden; 
+    background-color: #000;
 }
 
 .carousel-track {
     display: flex;
-    overflow-x: auto; /* Erlaubt horizontales Scrollen */
-    scroll-snap-type: x mandatory; /* Zwingt das Einrasten */
-    scroll-behavior: smooth; /* Weiches Scrollen beim Klick auf die Pfeile */
-    
-    /* Versteckt die Scrollbar für einen cleanen Look */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 
 .carousel-track::-webkit-scrollbar {
-    display: none; /* Chrome/Safari/Opera */
+    display: none; 
 }
 
 .carousel-slide {
-    flex: 0 0 100%; /* Jedes Bild nimmt 100% der Container-Breite ein */
+    flex: 0 0 100%; 
     width: 100%;
-    scroll-snap-align: center; /* Rastet in der Mitte ein */
-    /* Ideales Format für Instagram (4:5). Ändere es auf 1/1 für Quadrate */
+    scroll-snap-align: center; 
     aspect-ratio: 4 / 5; 
     object-fit: cover;
-    background-color: #e0e0e0; /* Platzhalter-Farbe, falls das Bild lädt */
+    background-color: #111; /* Sehr dunkles Grau als Platzhalter */
 }
 
-/* --- Karussell Buttons --- */
+/* --- Karussell Buttons (Editorial Style) --- */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--heading-color); /* Reinweiß */
     border: none;
-    color: #333;
+    color: var(--bg-color); /* Schwarze Pfeile */
     font-size: 1.5rem;
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 0px; /* Spitze, quadratische Buttons */
     z-index: 10;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .carousel-btn:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #444; /* Dunkelgrau beim Hovern */
+    color: var(--heading-color); /* Weißer Pfeil beim Hovern */
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+/* Pfeile direkt hart an den Rand klatschen */
+.prev { left: 0; }
+.next { right: 0; }
+
+/* --- ALLGEMEINE LINKS --- */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--heading-color);
+}
+
+/* --- ZURÜCK-LINK (Editorial Style) --- */
+.back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888; /* Ein dezentes Grau, damit es nicht von der Headline ablenkt */
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+
+.back-link:hover {
+    color: var(--heading-color); /* Wird strahlend weiß beim Drüberfahren */
+    border-bottom: 1px solid var(--heading-color); /* Bekommt eine weiße Linie */
+}
+
+/* --- SPLIT-SCREEN LAYOUT (Editorial Style Seite 7) --- */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Teilt den Bildschirm 50/50 auf */
+    gap: 60px; /* Schön viel Weißraum (bzw. Schwarzraum) zwischen Text und Bild */
+    align-items: center; /* Zentriert den Text vertikal zum Bild */
+    margin-bottom: 100px;
+}
+
+.split-text h2 {
+    font-size: 4rem; /* Massive Schriftgröße wie im PDF */
+    line-height: 0.95;
+    margin-bottom: 30px;
+    border-bottom: none; /* Hier lassen wir die Linie ausnahmsweise weg */
+    padding-bottom: 0;
+    text-transform: uppercase;
+    word-wrap: break-word; /* Verhindert, dass lange Wörter das Layout sprengen */
+}
+
+.split-text p {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.split-image {
+    width: 100%;
+}
+
+.split-image .image-placeholder {
+    width: 100%;
+    /* Ein hochformatiges Seitenverhältnis (z.B. 4:5) wirkt besonders edel */
+    aspect-ratio: 4 / 5; 
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- RESPONSIVE LOGIK FÜR SMARTPHONES --- */
+@media (max-width: 768px) {
+    .split-section {
+        grid-template-columns: 1fr; /* Auf dem Handy alles in eine Spalte untereinander */
+        gap: 40px;
+    }
+    
+    .split-text h2 {
+        font-size: 3rem; /* Auf dem Handy etwas kleiner, damit es passt */
+    }
+    
+    /* Ändert die Reihenfolge auf dem Handy, falls das Bild zuerst kommen soll (optional) */
+    /* .split-text { order: 2; } */
+    /* .split-image { order: 1; } */
+}
+
+/* --- SPLIT-SCREEN REVERSE (Für abwechselndes Layout) --- */
+.split-reverse .split-text {
+    order: 2;
+}
+.split-reverse .split-image {
+    order: 1;
+}
+
+/* Auf dem Handy soll der Text aber immer oben bleiben! */
+@media (max-width: 768px) {
+    .split-reverse .split-text { order: 1; }
+    .split-reverse .split-image { order: 2; }
+}
+
+/* Ein kleines Grid für die Social Ads */
+.ad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
