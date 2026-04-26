@@ -14,12 +14,14 @@
 }
 
 body {
-    /* Eine moderne, serifenlose Schrift, ähnlich wie im PDF */
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* NEU: Wir nutzen jetzt Inter als Hauptschrift */
+    font-family: 'Inter', sans-serif;
+    
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased; /* Macht die Schrift schärfer */
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; /* Macht die Schrift auch auf Firefox schön scharf */
 }
 
 .container {
