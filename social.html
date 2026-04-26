@@ -10,7 +10,7 @@
     <main class="container" style="margin-top: 50px;">
         
         <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
-
+        
         <section class="split-section" style="margin-top: 40px;">
             <div class="split-text">
                 <h2>Social Media<br>Campaigning</h2>
@@ -35,19 +35,37 @@
             </div>
         </section>
 
-        <section style="margin-bottom: 120px; text-align: center;">
-            <p style="margin-bottom: 20px; color: #666; text-transform: uppercase; letter-spacing: 2px;">Weiteres Beispiel</p>
-            <div class="carousel-container">
-                <button class="carousel-btn prev" onclick="moveSlide('track2', -1)">&#10094;</button>
-                <div class="carousel-track" id="track2">
-                    <img src="ig-carousel-2/slide1.jpg" alt="Slide 1" class="carousel-slide">
-                    <img src="ig-carousel-2/slide2.jpg" alt="Slide 2" class="carousel-slide">
-                    <img src="ig-carousel-2/slide3.jpg" alt="Slide 3" class="carousel-slide">
-                    <img src="ig-carousel-2/slide4.jpg" alt="Slide 4" class="carousel-slide">
-                    <img src="ig-carousel-2/slide5.jpg" alt="Slide 5" class="carousel-slide">
-                    <img src="ig-carousel-2/slide6.jpg" alt="Slide 6" class="carousel-slide">
+        <section class="split-section" style="margin-bottom: 120px; align-items: start;">            
+            <div class="split-image">
+                <p style="margin-bottom: 15px; color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; text-align: center;">Beispiel 2</p>
+                <div class="carousel-container" style="margin: 0 auto;">
+                    <button class="carousel-btn prev" onclick="moveSlide('track2', -1)">&#10094;</button>
+                    <div class="carousel-track" id="track2">
+                        <img src="ig-carousel-2/slide1.jpg" alt="Slide 1" class="carousel-slide">
+                        <img src="ig-carousel-2/slide2.jpg" alt="Slide 2" class="carousel-slide">
+                        <img src="ig-carousel-2/slide3.jpg" alt="Slide 3" class="carousel-slide">
+                        <img src="ig-carousel-2/slide4.jpg" alt="Slide 4" class="carousel-slide">
+                        <img src="ig-carousel-2/slide5.jpg" alt="Slide 5" class="carousel-slide">
+                        <img src="ig-carousel-2/slide6.jpg" alt="Slide 6" class="carousel-slide">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveSlide('track2', 1)">&#10095;</button>
                 </div>
-                <button class="carousel-btn next" onclick="moveSlide('track2', 1)">&#10095;</button>
+            </div>
+
+            <div class="split-image">
+                <p style="margin-bottom: 15px; color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; text-align: center;">Beispiel 3</p>
+                <div class="carousel-container" style="margin: 0 auto;">
+                    <button class="carousel-btn prev" onclick="moveSlide('track3', -1)">&#10094;</button>
+                    <div class="carousel-track" id="track3">
+                        <img src="ig-carousel-3/slide1.jpg" alt="Slide 1" class="carousel-slide">
+                        <img src="ig-carousel-3/slide2.jpg" alt="Slide 2" class="carousel-slide">
+                        <img src="ig-carousel-3/slide3.jpg" alt="Slide 3" class="carousel-slide">
+                        <img src="ig-carousel-3/slide4.jpg" alt="Slide 4" class="carousel-slide">
+                        <img src="ig-carousel-3/slide5.jpg" alt="Slide 5" class="carousel-slide">
+                        <img src="ig-carousel-3/slide6.jpg" alt="Slide 6" class="carousel-slide">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveSlide('track3', 1)">&#10095;</button>
+                </div>
             </div>
         </section>
 
@@ -58,8 +76,8 @@
                 <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px;">Content Creation • CTR</p>
             </div>
             <div class="split-image">
-                <img src="yt-thumbs/THUMB_Zardonic_x_HOFA.jpg" alt="YouTube Thumbnail 1" style="width: 100%; margin-bottom: 20px; border: 1px solid #333;">
-                <img src="yt-thumbs/Thumb_Professional_Keys_EN.jpg" alt="YouTube Thumbnail 2" style="width: 100%; border: 1px solid #333;">
+                <img src="yt-thumbs/THUMB_Zardonic_x_HOFA.jpg" alt="YouTube Thumbnail 1" class="gallery-img" style="margin-bottom: 20px;" onclick="openLightbox(this.src)">
+                <img src="yt-thumbs/Thumb_Professional_Keys_EN.jpg" alt="YouTube Thumbnail 2" class="gallery-img" onclick="openLightbox(this.src)">
             </div>
         </section>
 
@@ -70,20 +88,47 @@
                 <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px;">Performance Marketing</p>
             </div>
             <div class="split-image ad-grid">
-                <img src="social-ads/1zu1_Diploma_EN_Carlos_Quote.jpg" alt="Social Ad" style="width: 100%; border: 1px solid #333;">
-                <img src="social-ads/FB_IG_1_1_Shuresenn_V9.jpg" alt="Social Ad" style="width: 100%; border: 1px solid #333;">
-                <img src="social-ads/FB_IG_1zu1_Praesenz_WS_Sept24_1.jpg" alt="Social Ad" style="width: 100%; border: 1px solid #333;">
-                <img src="social-ads/FB_IG_Diploma_Bachelor_ohne_Aktion_V2.jpg" alt="Social Ad" style="width: 100%; border: 1px solid #333;">
+                <img src="social-ads/1zu1_Diploma_EN_Carlos_Quote.jpg" alt="Social Ad" class="gallery-img" onclick="openLightbox(this.src)">
+                <img src="social-ads/FB_IG_1_1_Shuresenn_V9.jpg" alt="Social Ad" class="gallery-img" onclick="openLightbox(this.src)">
+                <img src="social-ads/FB_IG_1zu1_Praesenz_WS_Sept24_1.jpg" alt="Social Ad" class="gallery-img" onclick="openLightbox(this.src)">
+                <img src="social-ads/FB_IG_Diploma_Bachelor_ohne_Aktion_V2.jpg" alt="Social Ad" class="gallery-img" onclick="openLightbox(this.src)">
             </div>
         </section>
 
+        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+
     </main>
 
+    <div id="myLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
     <script>
+        // --- Karussell Funktion ---
         function moveSlide(trackId, direction) {
             const track = document.getElementById(trackId);
             const slideWidth = track.clientWidth; 
             track.scrollLeft += direction * slideWidth;
+        }
+
+        // --- Lightbox Funktionen ---
+        function openLightbox(imgSrc) {
+            document.getElementById("myLightbox").style.display = "block";
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.body.style.overflow = "hidden"; 
+        }
+
+        function closeLightbox() {
+            document.getElementById("myLightbox").style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) {
+            var lightbox = document.getElementById("myLightbox");
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
         }
     </script>
 </body>
