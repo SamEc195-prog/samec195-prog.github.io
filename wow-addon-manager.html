@@ -1,29 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WoW Addon Manager | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="container" style="margin-top: 50px;">
-        
-        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container" style="margin-top: 50px">
+      <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
 
-        <section class="split-section">
-            <div class="split-text">
-                <h2>Coming soon</h2>
-                <p>Hier veröffentliche ich bald neue Informationen über mein eigenes Nebenprojekt.</p>
-                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px;">In progress... </p>
+      <section class="split-section" style="margin-top: 40px">
+        <div class="split-text">
+          <h2>WoW Addon<br />Manager</h2>
+          <p>
+            Ein in Python entwickeltes Tool zum automatisierten Herunterladen,
+            Aktualisieren und Verwalten von World of Warcraft Addons. Das
+            Programm vergleicht lokale Versionen mit Online-Repositories und
+            hält die Modifikationen der Nutzer selbstständig auf dem neuesten
+            Stand.
+          </p>
+
+          <ul class="tech-stack-list" style="margin-top: 40px">
+            <li><strong>Sprache</strong> Python 3</li>
+            <li><strong>Architektur</strong> Objektorientiert (OOP)</li>
+            <li>
+              <strong>Features</strong> Web-Scraping, File-Management,
+              API-Handling
+            </li>
+          </ul>
+
+          <a href="https://github.com/SamEc195-prog/WoW_Addon_Manager" class="button" style="margin-top: 40px"
+            >Auf GitHub ansehen &rarr;</a
+          >
+        </div>
+
+        <div class="split-image">
+          <div class="code-window">
+            <div class="code-header">
+              <span>addon_updater.py</span>
+              <span>Python</span>
             </div>
-        </section>
+            <div class="code-content">
+              <span class="code-keyword">import</span> os
+              <span class="code-keyword">import</span> requests
 
-        <a href="index.html" class="back-link" style="margin-top: 50px;">&larr; Zurück zur Übersicht</a>
+              <span class="code-keyword">class</span> AddonManager:
+              <span class="code-keyword">def</span> __init__(self, wow_path):
+              self.wow_path = wow_path self.addons = []
+              <span class="code-comment"># Initialisiere den lokalen Pfad</span>
 
+              <span class="code-keyword">def</span> check_for_updates(self):
+              <span class="code-string">print("Prüfe auf Updates...")</span>
+              <span class="code-keyword">for</span> addon
+              <span class="code-keyword">in</span> self.addons:
+              <span class="code-keyword">if</span> addon.needs_update():
+              self.download_latest(addon)
+
+              <span class="code-comment"># Weitere Logik folgt hier...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="split-section split-reverse">
+        <div class="split-text">
+          <h3>User Interface</h3>
+          <p>
+            Das Tool verfügt über ein schlankes Interface, das es dem Nutzer
+            ermöglicht, mit einem Klick alle Addons zu synchronisieren, ohne
+            manuelle Zip-Dateien entpacken zu müssen.
+          </p>
+        </div>
+        <div class="split-image">
+          <div
+            class="card-image"
+            style="
+              background-image: url(&quot;https://via.placeholder.com/800x600/222/555?text=Screenshot+GUI&quot;);
+              aspect-ratio: 16/9;
+            "
+          ></div>
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link" style="margin-top: 50px"
+        >&larr; Zurück zur Übersicht</a
+      >
     </main>
-</body>
+  </body>
 </html>

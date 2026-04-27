@@ -1,29 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Steam Game Random Picker | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="container" style="margin-top: 50px;">
-        
-        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container" style="margin-top: 50px">
+      <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
 
-        <section class="split-section">
-            <div class="split-text">
-                <h2>Coming soon</h2>
-                <p>Hier veröffentliche ich bald neue Informationen über mein eigenes Nebenprojekt.</p>
-                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px;">In progress... </p>
+      <section class="split-section" style="margin-top: 40px">
+        <div class="split-text">
+          <h2>Steam Game<br />Random Picker</h2>
+          <p>
+            Jeder Gamer kennt das Problem: Eine riesige Steam-Bibliothek, aber
+            keine Ahnung, was man spielen soll. Diese Java-Anwendung verbindet
+            sich mit der Steam-API, liest die Bibliothek des Nutzers aus und
+            wählt basierend auf verschiedenen Filtern zufällig das nächste
+            Abenteuer aus.
+          </p>
+
+          <ul class="tech-stack-list" style="margin-top: 40px">
+            <li><strong>Sprache</strong> Java</li>
+            <li><strong>Frontend</strong> JavaFX</li>
+            <li><strong>Build-Tool</strong> Maven</li>
+            <li><strong>API</strong> Steam Web API (REST)</li>
+          </ul>
+
+          <a href="https://github.com/SamEc195-prog/Steam_Game_Randompicker" class="button" style="margin-top: 40px"
+            >Auf GitHub ansehen &rarr;</a
+          >
+        </div>
+
+        <div class="split-image">
+          <div class="code-window">
+            <div class="code-header">
+              <span>GamePicker.java</span>
+              <span>Java</span>
             </div>
-        </section>
+            <div class="code-content">
+              <span class="code-keyword">package</span> com.portfolio.steam;
 
-        <a href="index.html" class="back-link" style="margin-top: 50px;">&larr; Zurück zur Übersicht</a>
+              <span class="code-keyword">import</span> java.util.List;
+              <span class="code-keyword">import</span> java.util.Random;
 
+              <span class="code-keyword">public class</span> GamePicker {
+
+              <span class="code-keyword">private</span> List&lt;Game&gt;
+              library;
+
+              <span class="code-keyword">public</span>
+              GamePicker(List&lt;Game&gt; library) {
+              <span class="code-keyword">this</span>.library = library; }
+
+              <span class="code-comment"
+                >// Wählt ein zufälliges Spiel aus</span
+              >
+              <span class="code-keyword">public</span> Game getRandomGame() {
+              <span class="code-keyword">if</span> (library.isEmpty()) {
+              <span class="code-keyword">return null</span>; } Random rand =
+              <span class="code-keyword">new</span> Random();
+              <span class="code-keyword">return</span>
+              library.get(rand.nextInt(library.size())); } }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="split-section split-reverse">
+        <div class="split-text">
+          <h3>Das Frontend</h3>
+          <p>
+            Das Interface wurde mit JavaFX gestaltet und bietet eine intuitive
+            Bedienung. Die Abhängigkeiten und der Build-Prozess werden sauber
+            über Maven verwaltet.
+          </p>
+        </div>
+        <div class="split-image">
+          <div
+            class="card-image"
+            style="
+              background-image: url(steam-game-random-picker/sgrp-v1-screenshot.png);
+              aspect-ratio: fit;
+            "
+          ></div>
+        </div>
+      </section>
+
+      <a href="index.html" class="back-link" style="margin-top: 50px"
+        >&larr; Zurück zur Übersicht</a
+      >
     </main>
-</body>
+  </body>
 </html>

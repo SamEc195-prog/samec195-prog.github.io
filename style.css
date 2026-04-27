@@ -1,403 +1,496 @@
 /* --- FARBEN & BASICS (Dark Minimalist) --- */
 :root {
-    --bg-color: #0a0a0a; /* Fast tiefschwarz */
-    --text-color: #e0e0e0; /* Helles Grau für gute Lesbarkeit */
-    --heading-color: #ffffff; /* Reines Weiß für Überschriften */
-    --accent-color: #ffffff; /* Keine bunten Akzente mehr, nur Weiß/Grau */
-    --card-bg: #141414; /* Leichtes Grau für die Kacheln zur Abhebung */
+  --bg-color: #0a0a0a; /* Fast tiefschwarz */
+  --text-color: #e0e0e0; /* Helles Grau für gute Lesbarkeit */
+  --heading-color: #ffffff; /* Reines Weiß für Überschriften */
+  --accent-color: #ffffff; /* Keine bunten Akzente mehr, nur Weiß/Grau */
+  --card-bg: #141414; /* Leichtes Grau für die Kacheln zur Abhebung */
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    /* NEU: Wir nutzen jetzt Inter als Hauptschrift */
-    font-family: 'Inter', sans-serif;
-    
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; /* Macht die Schrift auch auf Firefox schön scharf */
+  /* NEU: Wir nutzen jetzt Inter als Hauptschrift */
+  font-family: "Inter", sans-serif;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; /* Macht die Schrift auch auf Firefox schön scharf */
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* --- TYPOGRAFIE (Groß & Fett) --- */
 header {
-    margin-top: 100px;
-    margin-bottom: 80px;
+  margin-top: 100px;
+  margin-bottom: 80px;
 }
 
 header h1 {
-    font-size: 4.5rem; /* Riesige Überschrift */
-    font-weight: 800;
-    color: var(--heading-color);
-    line-height: 1;
-    letter-spacing: -2px; /* Etwas enger zusammen, für den Editorial-Look */
-    margin-bottom: 20px;
-    text-transform: uppercase; /* Optional: Macht es noch dominanter */
+  font-size: 4.5rem; /* Riesige Überschrift */
+  font-weight: 800;
+  color: var(--heading-color);
+  line-height: 1;
+  letter-spacing: -2px; /* Etwas enger zusammen, für den Editorial-Look */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Optional: Macht es noch dominanter */
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #888; /* Dezentes Grau */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    display: block;
+  font-size: 1.1rem;
+  color: #888; /* Dezentes Grau */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
 }
 
 header p {
-    font-size: 1.2rem;
-    max-width: 600px; /* Begrenzt die Textbreite wie im PDF */
-    color: #aaa;
+  font-size: 1.2rem;
+  max-width: 600px; /* Begrenzt die Textbreite wie im PDF */
+  color: #aaa;
 }
 
 .discription {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 /* --- SECTIONS & GRIDS --- */
 section {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--heading-color);
-    margin-bottom: 40px;
-    letter-spacing: -1px;
-    border-bottom: 1px solid #333; /* Harte, dunkle Linie statt weichem Grau */
-    padding-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+  border-bottom: 1px solid #333; /* Harte, dunkle Linie statt weichem Grau */
+  padding-bottom: 20px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 /* --- KACHELN (Kantig & Flach) --- */
 .card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 0px; /* Spitze Ecken statt runder Ecken! */
-    border: 1px solid #222; /* Sehr subtiler Rahmen */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 0px; /* Spitze Ecken statt runder Ecken! */
+  border: 1px solid #222; /* Sehr subtiler Rahmen */
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    border-color: #555; /* Rahmen wird heller beim Hovern */
+  transform: translateY(-10px);
+  border-color: #555; /* Rahmen wird heller beim Hovern */
 }
 
 .card h3 {
-    font-size: 1.5rem;
-    color: var(--heading-color);
-    margin-bottom: 20px;
-    margin-top: 10px;
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 /* --- BILD-PLATZHALTER --- */
 .card-image {
-    width: 100%;
-    aspect-ratio: 4 / 3; 
-    background-color: #2a2a2a; /* Dunkelgrauer Platzhalter */
-    margin-bottom: 20px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #2a2a2a; /* Dunkelgrauer Platzhalter */
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* --- BUTTONS (Dark Minimalist Update) --- */
 .button {
-    display: inline-block;
-    margin-top: auto;
-    align-self: flex-start;
-    padding: 12px 24px;
-    background-color: transparent; /* Transparenter Hintergrund */
-    color: var(--heading-color); /* Weiße Schrift */
-    border: 1px solid var(--heading-color); /* Weißer, harter Rahmen */
-    border-radius: 0px; /* Keine runden Ecken! */
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-transform: uppercase; /* Großbuchstaben für den Magazin-Look */
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 12px 24px;
+  background-color: transparent; /* Transparenter Hintergrund */
+  color: var(--heading-color); /* Weiße Schrift */
+  border: 1px solid var(--heading-color); /* Weißer, harter Rahmen */
+  border-radius: 0px; /* Keine runden Ecken! */
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Großbuchstaben für den Magazin-Look */
+  letter-spacing: 1px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  text-decoration: none;
 }
 
 .button:hover {
-    background-color: var(--heading-color); /* Weißer Hintergrund beim Drüberfahren */
-    color: var(--bg-color); /* Schwarze Schrift beim Drüberfahren */
-    text-decoration: none;
+  background-color: var(
+    --heading-color
+  ); /* Weißer Hintergrund beim Drüberfahren */
+  color: var(--bg-color); /* Schwarze Schrift beim Drüberfahren */
+  text-decoration: none;
 }
 
 /* --- Social Media Karussell (Dark Minimalist Update) --- */
 .carousel-container {
-    position: relative;
-    max-width: 500px; 
-    margin: 0 auto;   
-    border-radius: 0px; /* Spitze Ecken passend zum Design! */
-    border: 1px solid #333; /* Harter, dunkler Rand */
-    overflow: hidden; 
-    background-color: #000;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 0px; /* Spitze Ecken passend zum Design! */
+  border: 1px solid #333; /* Harter, dunkler Rand */
+  overflow: hidden;
+  background-color: #000;
 }
 
 .carousel-track {
-    display: flex;
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    scroll-behavior: smooth; 
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .carousel-track::-webkit-scrollbar {
-    display: none; 
+  display: none;
 }
 
 .carousel-slide {
-    flex: 0 0 100%; 
-    width: 100%;
-    scroll-snap-align: center; 
-    aspect-ratio: 4 / 5; 
-    object-fit: cover;
-    background-color: #111; /* Sehr dunkles Grau als Platzhalter */
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: center;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background-color: #111; /* Sehr dunkles Grau als Platzhalter */
 }
 
 /* --- Karussell Buttons (Editorial Style) --- */
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--heading-color); /* Reinweiß */
-    border: none;
-    color: var(--bg-color); /* Schwarze Pfeile */
-    font-size: 1.5rem;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 0px; /* Spitze, quadratische Buttons */
-    z-index: 10;
-    transition: background-color 0.2s, color 0.2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--heading-color); /* Reinweiß */
+  border: none;
+  color: var(--bg-color); /* Schwarze Pfeile */
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 0px; /* Spitze, quadratische Buttons */
+  z-index: 10;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .carousel-btn:hover {
-    background-color: #444; /* Dunkelgrau beim Hovern */
-    color: var(--heading-color); /* Weißer Pfeil beim Hovern */
+  background-color: #444; /* Dunkelgrau beim Hovern */
+  color: var(--heading-color); /* Weißer Pfeil beim Hovern */
 }
 
 /* Pfeile direkt hart an den Rand klatschen */
-.prev { left: 0; }
-.next { right: 0; }
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
 
 /* --- ALLGEMEINE LINKS --- */
 a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--heading-color);
+  color: var(--heading-color);
 }
 
 /* --- ZURÜCK-LINK (Editorial Style) --- */
 .back-link {
-    display: inline-block;
-    margin-bottom: 40px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #888; /* Ein dezentes Grau, damit es nicht von der Headline ablenkt */
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888; /* Ein dezentes Grau, damit es nicht von der Headline ablenkt */
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
 }
 
 .back-link:hover {
-    color: var(--heading-color); /* Wird strahlend weiß beim Drüberfahren */
-    border-bottom: 1px solid var(--heading-color); /* Bekommt eine weiße Linie */
+  color: var(--heading-color); /* Wird strahlend weiß beim Drüberfahren */
+  border-bottom: 1px solid var(--heading-color); /* Bekommt eine weiße Linie */
 }
 
 /* --- SPLIT-SCREEN LAYOUT (Editorial Style Seite 7) --- */
 .split-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Teilt den Bildschirm 50/50 auf */
-    gap: 60px; /* Schön viel Weißraum (bzw. Schwarzraum) zwischen Text und Bild */
-    align-items: center; /* Zentriert den Text vertikal zum Bild */
-    margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Teilt den Bildschirm 50/50 auf */
+  gap: 60px; /* Schön viel Weißraum (bzw. Schwarzraum) zwischen Text und Bild */
+  align-items: center; /* Zentriert den Text vertikal zum Bild */
+  margin-bottom: 100px;
 }
 
 .split-text h2 {
-    font-size: 4rem; /* Massive Schriftgröße wie im PDF */
-    line-height: 0.95;
-    margin-bottom: 30px;
-    border-bottom: none; /* Hier lassen wir die Linie ausnahmsweise weg */
-    padding-bottom: 0;
-    text-transform: uppercase;
-    word-wrap: break-word; /* Verhindert, dass lange Wörter das Layout sprengen */
+  font-size: 4rem; /* Massive Schriftgröße wie im PDF */
+  line-height: 0.95;
+  margin-bottom: 30px;
+  border-bottom: none; /* Hier lassen wir die Linie ausnahmsweise weg */
+  padding-bottom: 0;
+  text-transform: uppercase;
+  word-wrap: break-word; /* Verhindert, dass lange Wörter das Layout sprengen */
 }
 
 .split-text p {
-    color: #aaa;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
 
 .split-image {
-    width: 100%;
+  width: 100%;
 }
 
 .split-image .image-placeholder {
-    width: 100%;
-    /* Ein hochformatiges Seitenverhältnis (z.B. 4:5) wirkt besonders edel */
-    aspect-ratio: 4 / 5; 
-    background-color: #1a1a1a;
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  /* Ein hochformatiges Seitenverhältnis (z.B. 4:5) wirkt besonders edel */
+  aspect-ratio: 4 / 5;
+  background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center;
 }
 
 /* --- RESPONSIVE LOGIK FÜR SMARTPHONES --- */
 @media (max-width: 768px) {
-    .split-section {
-        grid-template-columns: 1fr; /* Auf dem Handy alles in eine Spalte untereinander */
-        gap: 40px;
-    }
-    
-    .split-text h2 {
-        font-size: 3rem; /* Auf dem Handy etwas kleiner, damit es passt */
-    }
-    
-    /* Ändert die Reihenfolge auf dem Handy, falls das Bild zuerst kommen soll (optional) */
-    /* .split-text { order: 2; } */
-    /* .split-image { order: 1; } */
+  .split-section {
+    grid-template-columns: 1fr; /* Auf dem Handy alles in eine Spalte untereinander */
+    gap: 40px;
+  }
+
+  .split-text h2 {
+    font-size: 3rem; /* Auf dem Handy etwas kleiner, damit es passt */
+  }
+
+  /* Ändert die Reihenfolge auf dem Handy, falls das Bild zuerst kommen soll (optional) */
+  /* .split-text { order: 2; } */
+  /* .split-image { order: 1; } */
 }
 
 /* --- SPLIT-SCREEN REVERSE (Für abwechselndes Layout) --- */
 .split-reverse .split-text {
-    order: 2;
+  order: 2;
 }
 .split-reverse .split-image {
-    order: 1;
+  order: 1;
 }
 
 /* Auf dem Handy soll der Text aber immer oben bleiben! */
 @media (max-width: 768px) {
-    .split-reverse .split-text { order: 1; }
-    .split-reverse .split-image { order: 2; }
+  .split-reverse .split-text {
+    order: 1;
+  }
+  .split-reverse .split-image {
+    order: 2;
+  }
 }
 
 /* Ein kleines Grid für die Social Ads */
 .ad-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 /* --- PRINT-FORMATE (z.B. Roll-Ups) --- */
 .print-presentation {
-    background-color: #111; /* Dunkle Bühne für das Print-Produkt */
-    padding: 40px 20px;
-    border: 1px solid #222;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background-color: #111; /* Dunkle Bühne für das Print-Produkt */
+  padding: 40px 20px;
+  border: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .tall-print {
-    max-height: 700px; /* Begrenzt die Höhe, damit man nicht ewig scrollen muss */
-    width: auto; /* Behält die originalen Proportionen bei */
-    max-width: 100%; /* Verhindert, dass es auf Handys über den Rand ragt */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6); /* Edler Schatten, der das Printprodukt abhebt */
-    margin-bottom: 20px;
+  max-height: 700px; /* Begrenzt die Höhe, damit man nicht ewig scrollen muss */
+  width: auto; /* Behält die originalen Proportionen bei */
+  max-width: 100%; /* Verhindert, dass es auf Handys über den Rand ragt */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Edler Schatten, der das Printprodukt abhebt */
+  margin-bottom: 20px;
 }
 
 /* --- FULL WIDTH GALLERY (4 Columns) --- */
 .full-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Spalten! */
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Spalten! */
+  gap: 20px;
 }
 
 .gallery-img {
-    width: 100%;
-    /* aspect-ratio: 1 / 1; Optional: Entferne die // am Anfang, falls du die Bilder perfekt quadratisch zuschneiden willst */
-    object-fit: cover;
-    border: 1px solid #333;
-    cursor: pointer; /* Zeigt an, dass man klicken kann (Hand-Symbol) */
-    transition: transform 0.2s ease, border-color 0.2s ease;
+  width: 100%;
+  /* aspect-ratio: 1 / 1; Optional: Entferne die // am Anfang, falls du die Bilder perfekt quadratisch zuschneiden willst */
+  object-fit: cover;
+  border: 1px solid #333;
+  cursor: pointer; /* Zeigt an, dass man klicken kann (Hand-Symbol) */
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .gallery-img:hover {
-    transform: scale(1.03); /* Leichter Zoom-Effekt beim Drüberfahren */
-    border-color: #666;
+  transform: scale(1.03); /* Leichter Zoom-Effekt beim Drüberfahren */
+  border-color: #666;
 }
 
 /* Auf kleineren Bildschirmen brechen wir auf 2 Spalten, auf Handys auf 1 Spalte um */
 @media (max-width: 900px) {
-    .full-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .full-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 500px) {
-    .full-gallery-grid { grid-template-columns: 1fr; }
+  .full-gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- LIGHTBOX (Modal / Pop-up) --- */
 .lightbox {
-    display: none; /* Ist unsichtbar, bis es angeklickt wird */
-    position: fixed;
-    z-index: 100; /* Legt sich über alles andere */
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.95); /* Sehr dunkles, fast schwarzes Overlay */
+  display: none; /* Ist unsichtbar, bis es angeklickt wird */
+  position: fixed;
+  z-index: 100; /* Legt sich über alles andere */
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.95
+  ); /* Sehr dunkles, fast schwarzes Overlay */
 }
 
 .lightbox-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 85vh; /* Darf nicht höher als der Bildschirm sein */
-    object-fit: contain;
-    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh; /* Darf nicht höher als der Bildschirm sein */
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
 .close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #888;
-    font-size: 50px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #888;
+  font-size: 50px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .close-lightbox:hover {
-    color: #fff; /* Das X wird weiß beim Hovern */
-    text-decoration: none;
+  color: #fff; /* Das X wird weiß beim Hovern */
+  text-decoration: none;
+}
+
+/* --- IT & SOFTWARE PROJEKTE (Terminal / Code Look) --- */
+.code-window {
+  background-color: #050505; /* Noch dunkler als der Hintergrund */
+  border: 1px solid #333;
+  padding: 20px 30px;
+  width: 100%;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); /* Leichter Schatten nach innen */
+}
+
+.code-header {
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 0.75rem;
+  font-family:
+    "Courier New", Courier, monospace; /* Klassische Programmier-Schrift */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.code-content {
+  color: #a9b7c6; /* Typische "Darcula/IntelliJ" Textfarbe */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: auto; /* Erlaubt Scrollen, wenn die Code-Zeile zu lang ist */
+  white-space: pre; /* Behält deine Einrückungen exakt so bei, wie du sie schreibst */
+}
+
+/* Spezifische Highlighting-Farben für einen coolen Look (Optional) */
+.code-keyword {
+  color: #cc7832;
+  font-weight: bold;
+} /* Orange für if, def, class */
+.code-string {
+  color: #6a8759;
+} /* Grün für Text/Strings */
+.code-comment {
+  color: #808080;
+  font-style: italic;
+} /* Grau für Kommentare */
+
+/* Tech-Stack Liste */
+.tech-stack-list {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.tech-stack-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+}
+
+.tech-stack-list li strong {
+  color: var(--heading-color);
+  width: 120px; /* Sorgt dafür, dass die Liste schön bündig ist */
+  display: inline-block;
 }

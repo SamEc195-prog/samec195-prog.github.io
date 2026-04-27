@@ -1,75 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Information Design | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="container" style="margin-top: 50px;">
-        
-        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container" style="margin-top: 50px">
+      <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
 
-        <section class="split-section split-reverse">
-            <div class="split-text">
-                <h2>Grafiken<br>E-Learning</h2>
-                <p>Didaktische Visualisierungen zur Unterstützung des Lernprozesses. Komplexe Sachverhalte aus der Akustik und Instrumentenkunde werden leicht verständlich aufbereitet.</p>
-                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px;">Infografiken • Akustik</p>
-            </div>
-            <div class="split-image">
-                <img src="information-design/ocv3-ak1-sample-2.png" alt="Akustik Sample" style="width: 100%; margin-bottom: 20px; border: 1px solid #333;">
-            </div>
-        </section>
+      <section class="split-section split-reverse">
+        <div class="split-text">
+          <h2>Grafiken<br />E-Learning</h2>
+          <p>
+            Didaktische Visualisierungen zur Unterstützung des Lernprozesses.
+            Komplexe Sachverhalte aus der Akustik und Instrumentenkunde werden
+            leicht verständlich aufbereitet.
+          </p>
+          <p
+            style="
+              color: #666;
+              font-size: 0.9rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-top: 20px;
+            "
+          >
+            Infografiken • Akustik
+          </p>
+        </div>
+        <div class="split-image">
+          <img
+            src="information-design/ocv3-ak1-sample-2.png"
+            alt="Akustik Sample"
+            style="width: 100%; margin-bottom: 20px; border: 1px solid #333"
+          />
+        </div>
+      </section>
 
-        <section style="margin-bottom: 100px;">
+      <section style="margin-bottom: 100px">
+        <div class="full-gallery-grid">
+          <img
+            src="information-design/instrumentenkunde-fluegel.jpg"
+            alt="Flügel"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="information-design/AuxInsert_1_1.svg"
+            alt="Aux Insert"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="information-design/akustik-1-hall-nachhall.jpg"
+            alt="Hall"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="information-design/akustik-1-wellenlänge.jpg"
+            alt="Wellenlänge"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
 
-            <div class="full-gallery-grid">
-                <img src="information-design/instrumentenkunde-fluegel.jpg" alt="Flügel" class="gallery-img" onclick="openLightbox(this.src)">
-                <img src="information-design/AuxInsert_1_1.svg" alt="Aux Insert" class="gallery-img" onclick="openLightbox(this.src)">
-                <img src="information-design/akustik-1-hall-nachhall.jpg" alt="Hall" class="gallery-img" onclick="openLightbox(this.src)">
-                <img src="information-design/akustik-1-wellenlänge.jpg" alt="Wellenlänge" class="gallery-img" onclick="openLightbox(this.src)">
-                
-                <img src="information-design/eingangsmodul.jpg" alt="Bild 5" class="gallery-img" onclick="openLightbox(this.src)">
-                <img src="information-design/bereiche-zumisch-sendeffekte.jpg" alt="Bild 6" class="gallery-img" onclick="openLightbox(this.src)">
-                <img src="information-design/basic-equipment.jpg" alt="Bild 7" class="gallery-img" style="background-color: #fff;" onclick="openLightbox(this.src)">
-                <img src="information-design/schnittstellen-kabel.jpg" alt="Bild 8" class="gallery-img" onclick="openLightbox(this.src)">
-            </div>
-        </section>
+          <img
+            src="information-design/eingangsmodul.jpg"
+            alt="Bild 5"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="information-design/bereiche-zumisch-sendeffekte.jpg"
+            alt="Bild 6"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="information-design/basic-equipment.jpg"
+            alt="Bild 7"
+            class="gallery-img"
+            style="background-color: #fff"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="information-design/schnittstellen-kabel.jpg"
+            alt="Bild 8"
+            class="gallery-img"
+            onclick="openLightbox(this.src)"
+          />
+        </div>
+      </section>
 
-        <a href="index.html" class="back-link" style="margin-top: 50px;">&larr; Zurück zur Übersicht</a>
-
+      <a href="index.html" class="back-link" style="margin-top: 50px"
+        >&larr; Zurück zur Übersicht</a
+      >
     </main>
 
     <div id="myLightbox" class="lightbox">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
     </div>
 
     <script>
-        // Öffnet die Lightbox und setzt die Quelle des angeklickten Bildes
-        function openLightbox(imgSrc) {
-            document.getElementById("myLightbox").style.display = "block";
-            document.getElementById("lightbox-img").src = imgSrc;
-            document.body.style.overflow = "hidden"; // Verhindert Scrollen im Hintergrund
-        }
+      // Öffnet die Lightbox und setzt die Quelle des angeklickten Bildes
+      function openLightbox(imgSrc) {
+        document.getElementById("myLightbox").style.display = "block";
+        document.getElementById("lightbox-img").src = imgSrc;
+        document.body.style.overflow = "hidden"; // Verhindert Scrollen im Hintergrund
+      }
 
-        // Schließt die Lightbox
-        function closeLightbox() {
-            document.getElementById("myLightbox").style.display = "none";
-            document.body.style.overflow = "auto"; // Erlaubt wieder Scrollen
-        }
+      // Schließt die Lightbox
+      function closeLightbox() {
+        document.getElementById("myLightbox").style.display = "none";
+        document.body.style.overflow = "auto"; // Erlaubt wieder Scrollen
+      }
 
-        // Extra Feature: Schließt die Lightbox auch, wenn man neben das Bild ins Schwarze klickt!
-        window.onclick = function(event) {
-            var lightbox = document.getElementById("myLightbox");
-            if (event.target == lightbox) {
-                closeLightbox();
-            }
+      // Extra Feature: Schließt die Lightbox auch, wenn man neben das Bild ins Schwarze klickt!
+      window.onclick = function (event) {
+        var lightbox = document.getElementById("myLightbox");
+        if (event.target == lightbox) {
+          closeLightbox();
         }
+      };
     </script>
-</body>
+  </body>
 </html>
