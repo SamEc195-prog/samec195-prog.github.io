@@ -14,7 +14,7 @@
         
         <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
 
-        <!-- YouTube Thumbnails -->
+        <!-- Flyer -->
         <section class="split-section">
             <div class="split-text">
                 <h2>Flyer</h2>
@@ -26,7 +26,7 @@
             </div>
         </section>
 
-        <!-- Performance Social Ads -->
+        <!-- Roll-Up -->
         <section class="split-section split-reverse">                
             <div class="split-text">
                 <h2>Roll-Up</h2>
@@ -40,8 +40,47 @@
             </div>
         </section>
 
+        <section class="split-section">
+            <div class="split-text">
+                <h2>Magazin Ads</h2>
+                <p>Speziell für Magazinverlage entwickelte Werbeanzeigen, die eine hohe Lesbarkeit und Wirkung auf den Leser haben.</p>
+                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px;">Performance Marketing</p>
+            </div>
+            <div class="split-image ad-grid">
+                <img src="corporate-print/print-ad-synth-magazin.png" alt="Magazin Ad" class="gallery-img" onclick="openLightbox(this.src)">
+                <img src="corporate-print/print-ak-synth-magazin.png" alt="Magazin Ad" class="gallery-img" onclick="openLightbox(this.src)">
+            </div>
+        </section>
+
         <a href="index.html" class="back-link" style="margin-top: 50px;">&larr; Zurück zur Übersicht</a>
 
     </main>
+
+    <div id="myLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+
+        // --- Lightbox Funktionen ---
+        function openLightbox(imgSrc) {
+            document.getElementById("myLightbox").style.display = "block";
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.body.style.overflow = "hidden"; 
+        }
+
+        function closeLightbox() {
+            document.getElementById("myLightbox").style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) {
+            var lightbox = document.getElementById("myLightbox");
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        }
+    </script>
 </body>
 </html>

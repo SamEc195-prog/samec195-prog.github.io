@@ -34,7 +34,10 @@
             <li><strong>API</strong> Steam Web API (REST)</li>
           </ul>
 
-          <a href="https://github.com/SamEc195-prog/Steam_Game_Randompicker" class="button" style="margin-top: 40px"
+          <a
+            href="https://github.com/SamEc195-prog/Steam_Game_Randompicker"
+            class="button"
+            style="margin-top: 40px"
             >Auf GitHub ansehen &rarr;</a
           >
         </div>
@@ -42,33 +45,47 @@
         <div class="split-image">
           <div class="code-window">
             <div class="code-header">
-              <span>GamePicker.java</span>
+              <span>SteamGameRandompicker.java</span>
               <span>Java</span>
             </div>
             <div class="code-content">
-              <span class="code-keyword">package</span> com.portfolio.steam;
-
-              <span class="code-keyword">import</span> java.util.List;
-              <span class="code-keyword">import</span> java.util.Random;
-
-              <span class="code-keyword">public class</span> GamePicker {
-
-              <span class="code-keyword">private</span> List&lt;Game&gt;
-              library;
+              <span class="code-keyword">import</span> java.net.http.HttpClient;
+              <span class="code-keyword">import</span> com.google.gson.Gson;
 
               <span class="code-keyword">public</span>
-              GamePicker(List&lt;Game&gt; library) {
-              <span class="code-keyword">this</span>.library = library; }
+              <span class="code-keyword">List</span>&lt;Game&gt;
+              fetchOwnedGames() { <span class="code-keyword">try</span> {
+              HttpClient client = HttpClient.newHttpClient();
 
               <span class="code-comment"
-                >// Wählt ein zufälliges Spiel aus</span
+                >// API-Call mit Injektion von API-Key und Steam-ID</span
               >
-              <span class="code-keyword">public</span> Game getRandomGame() {
-              <span class="code-keyword">if</span> (library.isEmpty()) {
-              <span class="code-keyword">return null</span>; } Random rand =
-              <span class="code-keyword">new</span> Random();
-              <span class="code-keyword">return</span>
-              library.get(rand.nextInt(library.size())); } }
+              String url = String.format(
+              <span class="code-string"
+                >"http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=%s&steamid=%s&format=json&include_appinfo=true"</span
+              >, <span class="code-keyword">this</span>.API_KEY,
+              <span class="code-keyword">this</span>.STEAM_ID ); HttpRequest
+              request = HttpRequest.newBuilder().uri(<span class="code-keyword"
+                >new</span
+              >
+              URI(url)).build(); HttpResponse&lt;String&gt; response =
+              client.send(request, HttpResponse.BodyHandlers.ofString());
+
+              <span class="code-keyword">if</span> (response.statusCode() ==
+              200) {
+              <span class="code-comment"
+                >// JSON-Response mappen (Data Binding via Gson)</span
+              >
+              Gson gson = <span class="code-keyword">new</span> Gson();
+              SteamResponse steamData = gson.fromJson(response.body(),
+              SteamResponse.class);
+
+              <span class="code-keyword">return</span> steamData.response.games;
+              } } <span class="code-keyword">catch</span> (Exception e) {
+              e.printStackTrace(); }
+
+              <span class="code-keyword">return</span> Collections.emptyList();
+              }
             </div>
           </div>
         </div>
@@ -84,13 +101,14 @@
           </p>
         </div>
         <div class="split-image">
-          <div
-            class="card-image"
-            style="
-              background-image: url(steam-game-random-picker/sgrp-v1-screenshot.png);
-              aspect-ratio: fit;
-            "
-          ></div>
+          <div class="gallery-img">
+            <img
+              src="steam-game-random-picker/sgrp-v1-screenshot.png"
+              alt="Screenshot der Anwendung"
+              class="gallery-img"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
       </section>
 
@@ -98,5 +116,31 @@
         >&larr; Zurück zur Übersicht</a
       >
     </main>
+
+    <div id="myLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        // --- Lightbox Funktionen ---
+        function openLightbox(imgSrc) {
+            document.getElementById("myLightbox").style.display = "block";
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.body.style.overflow = "hidden"; 
+        }
+
+        function closeLightbox() {
+            document.getElementById("myLightbox").style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) {
+            var lightbox = document.getElementById("myLightbox");
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        }
+    </script>
   </body>
 </html>

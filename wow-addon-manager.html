@@ -36,7 +36,10 @@
             </li>
           </ul>
 
-          <a href="https://github.com/SamEc195-prog/WoW_Addon_Manager" class="button" style="margin-top: 40px"
+          <a
+            href="https://github.com/SamEc195-prog/WoW_Addon_Manager"
+            class="button"
+            style="margin-top: 40px"
             >Auf GitHub ansehen &rarr;</a
           >
         </div>
@@ -44,26 +47,56 @@
         <div class="split-image">
           <div class="code-window">
             <div class="code-header">
-              <span>addon_updater.py</span>
+              <span>api_client.py</span>
               <span>Python</span>
             </div>
             <div class="code-content">
-              <span class="code-keyword">import</span> os
               <span class="code-keyword">import</span> requests
+              <span class="code-keyword">import</span> re
 
-              <span class="code-keyword">class</span> AddonManager:
-              <span class="code-keyword">def</span> __init__(self, wow_path):
-              self.wow_path = wow_path self.addons = []
-              <span class="code-comment"># Initialisiere den lokalen Pfad</span>
+              <span class="code-keyword">def</span>
+              scrape_curseforge_id(addon_name, client_type=<span
+                class="code-string"
+                >"retail"</span
+              >):
+              <span class="code-comment"
+                >"""Sucht die Project-ID via Web-Scraping (Fallback zur
+                API)"""</span
+              >
 
-              <span class="code-keyword">def</span> check_for_updates(self):
-              <span class="code-string">print("Prüfe auf Updates...")</span>
-              <span class="code-keyword">for</span> addon
-              <span class="code-keyword">in</span> self.addons:
-              <span class="code-keyword">if</span> addon.needs_update():
-              self.download_latest(addon)
+              <span class="code-comment"
+                ># Normalisiert den String für die URL-Struktur</span
+              >
+              slug = re.sub(<span class="code-string">r'[\s_]+'</span>,
+              <span class="code-string">'-'</span>, addon_name).lower()
 
-              <span class="code-comment"># Weitere Logik folgt hier...</span>
+              <span class="code-keyword">if</span> client_type ==
+              <span class="code-string">"classic"</span>
+              <span class="code-keyword">and</span>
+              <span class="code-string">"classic"</span>
+              <span class="code-keyword">not in</span> slug: slug +=
+              <span class="code-string">"-classic"</span>
+
+              url =
+              <span class="code-string"
+                >f"https://www.curseforge.com/wow/addons/{slug}"</span
+              >
+
+              <span class="code-keyword">try</span>: response =
+              requests.get(url, timeout=10)
+              <span class="code-comment"># Headers omitted</span>
+              <span class="code-keyword">if</span> response.status_code == 200:
+              <span class="code-comment"
+                ># Extrahiert die ID direkt aus dem DOM</span
+              >
+              match = re.search(<span class="code-string"
+                >r'class="project-id"&gt;(\d+)&lt;/span&gt;'</span
+              >, response.text) <span class="code-keyword">if</span> match:
+              <span class="code-keyword">return</span> match.group(1)
+
+              <span class="code-keyword">except</span>
+              requests.exceptions.RequestException:
+              <span class="code-keyword">return None</span>
             </div>
           </div>
         </div>
@@ -79,13 +112,14 @@
           </p>
         </div>
         <div class="split-image">
-          <div
-            class="card-image"
-            style="
-              background-image: url(&quot;https://via.placeholder.com/800x600/222/555?text=Screenshot+GUI&quot;);
-              aspect-ratio: 16/9;
-            "
-          ></div>
+          <div class="gallery-img">
+            <img
+              src="wow-addon-manager/wowam-v1-screenshot.png"
+              alt="Screenshot der Anwendung"
+              class="gallery-img"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
       </section>
 
@@ -93,5 +127,31 @@
         >&larr; Zurück zur Übersicht</a
       >
     </main>
+
+    <div id="myLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        // --- Lightbox Funktionen ---
+        function openLightbox(imgSrc) {
+            document.getElementById("myLightbox").style.display = "block";
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.body.style.overflow = "hidden"; 
+        }
+
+        function closeLightbox() {
+            document.getElementById("myLightbox").style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) {
+            var lightbox = document.getElementById("myLightbox");
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        }
+    </script>
   </body>
 </html>
