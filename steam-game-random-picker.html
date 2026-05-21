@@ -3,144 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steam Game Random Picker | Portfolio</title>
+    <title>Steam Randomizer | UI/UX Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container" style="margin-top: 50px">
       <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
 
-      <section class="split-section" style="margin-top: 40px">
+      <section class="split-section" style="margin-top: 40px; margin-bottom: 0px;">
         <div class="split-text">
-          <h2>Steam Game<br />Random Picker</h2>
+          <h2>Steam<br />Randomizer</h2>
+          <p class="subtitle" style="color: #666;">Web Edition • UI/UX Case Study</p>
           <p>
-            Jeder Gamer kennt das Problem: Eine riesige Steam-Bibliothek, aber
-            keine Ahnung, was man spielen soll. Diese Java-Anwendung verbindet
-            sich mit der Steam-API, liest die Bibliothek des Nutzers aus und
-            wählt basierend auf verschiedenen Filtern zufällig das nächste
-            Abenteuer aus.
+            Das Projekt begann als lokale JavaFX-Desktopanwendung. Das Ziel: Das bekannte „Paradox of Choice“ lösen – man hat hunderte Spiele in seiner Steam-Bibliothek, weiß aber trotzdem nicht, was man spielen soll. Um das Nutzererlebnis flexibler zu machen, habe ich die Anwendung als responsive Web-App komplett neu konzipiert.
           </p>
 
-          <ul class="tech-stack-list" style="margin-top: 40px">
-            <li><strong>Sprache</strong> Java</li>
-            <li><strong>Frontend</strong> JavaFX</li>
-            <li><strong>Build-Tool</strong> Maven</li>
-            <li><strong>API</strong> Steam Web API (REST)</li>
+          <ul class="tech-stack-list" style="margin-top: 30px">
+            <li><strong>Tech-Stack</strong> React, Vite, CSS3</li>
+            <li><strong>Backend</strong> Firebase (Firestore)</li>
+            <li><strong>Schnittstelle</strong> Steam Web API</li>
           </ul>
 
-          <a
-            href="https://github.com/SamEc195-prog/Steam_Game_Randompicker"
-            class="button"
-            style="margin-top: 40px"
-            >Auf GitHub ansehen &rarr;</a
-          >
+          <a href="https://samec195-prog.github.io/Steam_Randomizer_Web/" class="button" style="margin-top: 40px">App testen &rarr;</a>
+          
         </div>
 
         <div class="split-image">
-          <div class="code-window">
-            <div class="code-header">
-              <span>SteamGameRandompicker.java</span>
-              <span>Java</span>
-            </div>
-            <div class="code-content">
-              <span class="code-keyword">import</span> java.net.http.HttpClient;
-              <span class="code-keyword">import</span> com.google.gson.Gson;
-
-              <span class="code-keyword">public</span>
-              <span class="code-keyword">List</span>&lt;Game&gt;
-              fetchOwnedGames() { <span class="code-keyword">try</span> {
-              HttpClient client = HttpClient.newHttpClient();
-
-              <span class="code-comment"
-                >// API-Call mit Injektion von API-Key und Steam-ID</span
-              >
-              String url = String.format(
-              <span class="code-string"
-                >"http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=%s&steamid=%s&format=json&include_appinfo=true"</span
-              >, <span class="code-keyword">this</span>.API_KEY,
-              <span class="code-keyword">this</span>.STEAM_ID ); HttpRequest
-              request = HttpRequest.newBuilder().uri(<span class="code-keyword"
-                >new</span
-              >
-              URI(url)).build(); HttpResponse&lt;String&gt; response =
-              client.send(request, HttpResponse.BodyHandlers.ofString());
-
-              <span class="code-keyword">if</span> (response.statusCode() ==
-              200) {
-              <span class="code-comment"
-                >// JSON-Response mappen (Data Binding via Gson)</span
-              >
-              Gson gson = <span class="code-keyword">new</span> Gson();
-              SteamResponse steamData = gson.fromJson(response.body(),
-              SteamResponse.class);
-
-              <span class="code-keyword">return</span> steamData.response.games;
-              } } <span class="code-keyword">catch</span> (Exception e) {
-              e.printStackTrace(); }
-
-              <span class="code-keyword">return</span> Collections.emptyList();
-              }
-            </div>
+          <div class="print-presentation">
+            <img src="steam-game-random-picker/samec195-prog.github.io_Steam_Randomizer_Web.png" alt="Steam Randomizer Web Mockup" class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: auto;">
+            <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">Responsive Web App UI</p>
           </div>
         </div>
+      </section>
+
+      <!-- Live Demo Hinweis -->
+      <div style="margin-top: 50px; margin-bottom: 50px; background: #141414; padding: 30px; border: 1px solid #222; text-align: center;">
+          <p style="color: #888; font-size: 0.95rem; margin-bottom: 0;">
+            <em>Hinweis zur Live-Demo:</em> Für dieses Portfolio wurde eine interaktive Demo-Version mit Showcase-Daten hinterlegt, die ohne Steam-Login direkt im Browser getestet werden kann.
+          </p>
+        </div>
+
+        <section style="margin-bottom: 60px; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 40px 0;">
+        <h3 style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; color: #666;">Konzeptions-Wechsel: Vom Prototyp zur Web-App</h3>
+        <p style="max-width: 800px; font-size: 1.05rem; line-height: 1.7; color: #aaa;">
+          Die ursprüngliche Desktop-Version war bewusst kein UX-Projekt – sie entstand als reines Lernprojekt, um Java zu üben. Erst im täglichen Alltag zeigte sich das eigentliche Problem: Die Anwendung war an einen festen Rechner gebunden. Der explizite Wunsch, denselben Spiele-Pool auch schnell und bequem vom Smartphone aus zu nutzen, war der konkrete Auslöser für die Neukonzeption als Web-App. Es stand von Beginn an eine ganz praktische Frage im Mittelpunkt: Wie muss sich das Interface auf einem kleinen Touchscreen grundlegend anders anfühlen als am Desktop, um eine echte ergonomische Verbesserung zu bieten?
+        </p>
       </section>
 
       <section class="split-section split-reverse">
         <div class="split-text">
-          <h3>Das Frontend</h3>
-          <p>
-            Das Interface wurde mit JavaFX gestaltet und bietet eine intuitive
-            Bedienung. Die Abhängigkeiten und der Build-Prozess werden sauber
-            über Maven verwaltet.
-          </p>
+          <h3>UI/UX Highlights</h3>
+          <p><strong>Cognitive Load Management:</strong> Eine Steam-Bibliothek mit mehreren Spielen ist visuell erschlagend. Das UI nutzt ein klares Split-Pane-Design (Zwei-Spalten-Layout). Links der fokussierte „Pool“ (die aktuelle Vorauswahl), rechts die durchsuchbare Gesamtbibliothek. So wird die kognitive Last reduziert.</p>
+          <p><strong>Plattformübergreifende Ergonomie:</strong> Auf dem Smartphone bricht das Layout nicht einfach um: Die Interaktions-Pfeile zwischen den Listen rotieren dynamisch um 90 Grad. Dies unterstützt die vertikale Struktur und die natürliche Daumenbewegung auf Touchscreens.</p>
         </div>
         <div class="split-image">
-          <div class="gallery-img">
-            <img
-              src="steam-game-random-picker/sgrp-v1-screenshot.png"
-              alt="Screenshot der Anwendung"
-              class="gallery-img"
-              onclick="openLightbox(this.src)"
-            />
+          <div class="print-presentation" style="padding: 20px;">
+            <img src="steam-game-random-picker/samec195-prog.github.io_Steam_Randomizer_Web_mobile.png" alt="Mobile Ergonomie Konzept" class="gallery-img" onclick="openLightbox(this.src)" style="max-height: 400px; width: auto;">
+            <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">Mobile Ergonomie & Responsive Layout</p>
           </div>
         </div>
       </section>
 
-      <a href="index.html" class="back-link" style="margin-top: 50px"
-        >&larr; Zurück zur Übersicht</a
-      >
+      <section style="margin-bottom: 100px; border-top: 1px solid #333; padding-top: 60px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Case Study: Kontextbezogenes Gaming</h2>
+        
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+          <div>
+            <h4 style="text-transform: uppercase; letter-spacing: 1px; color: #ff4a4a; margin-bottom: 15px;">01. Das Problem</h4>
+            <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7;">
+              Gamer suchen oft nicht einfach nur „ein zufälliges Spiel“. Die Entscheidung ist stark kontextabhängig (z. B. „Feierabend-Spiele“, „Lokaler Multiplayer“ oder „Lange RPGs für das Wochenende“). Den Auswahl-Pool jedes Mal aus hunderten Spielen neu zusammenklicken zu müssen, ist schlechtes UX.
+            </p>
+          </div>
+          
+          <div>
+            <h4 style="text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-bottom: 15px;">02. Die Lösung</h4>
+            <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7;">
+              Implementierung eines dynamischen Profil-Systems, das über eine Firebase Firestore Datenbank synchronisiert wird. Nutzer können sich thematische Pools als eigene Profile abspeichern und per Dropdown in Echtzeit zwischen ihnen wechseln. Ergänzt durch ein Feld für „Custom Games“ (Epic Games, Emulatoren).
+            </p>
+          </div>
+
+          <div>
+            <h4 style="text-transform: uppercase; letter-spacing: 1px; color: #00ffcc; margin-bottom: 15px;">03. Das UX-Ergebnis</h4>
+            <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7;">
+              Durch die Cloud-Synchronisation entsteht ein nahtloses Cross-Device-Erlebnis. Der Nutzer kuratiert seine Profile bequem am PC mit Maus und Tastatur. Am Sofa genügt ein Griff zum Smartphone: Das Profil ist sofort geladen und der Randomizer wird mit einem einzigen Tap ausgelöst.
+            </p>
+          </div>
+        </div>
+
+        <a href="https://github.com/SamEc195-prog/Steam_Randomizer_Web" class="button" style="margin-top: 40px">Auf GitHub ansehen &rarr;</a>
+      </section>
+
+      <a href="index.html" class="back-link" style="margin-top: 50px">&larr; Zurück zur Übersicht</a>
     </main>
 
     <div id="myLightbox" class="lightbox">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
     </div>
 
     <script>
-        // --- Lightbox Funktionen ---
-        function openLightbox(imgSrc) {
-            document.getElementById("myLightbox").style.display = "block";
-            document.getElementById("lightbox-img").src = imgSrc;
-            document.body.style.overflow = "hidden"; 
-        }
+      function openLightbox(imgSrc) {
+        document.getElementById("myLightbox").style.display = "block";
+        document.getElementById("lightbox-img").src = imgSrc;
+        document.body.style.overflow = "hidden";
+      }
 
-        function closeLightbox() {
-            document.getElementById("myLightbox").style.display = "none";
-            document.body.style.overflow = "auto"; 
-        }
+      function closeLightbox() {
+        document.getElementById("myLightbox").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
 
-        window.onclick = function(event) {
-            var lightbox = document.getElementById("myLightbox");
-            if (event.target == lightbox) {
-                closeLightbox();
-            }
+      window.onclick = function (event) {
+        var lightbox = document.getElementById("myLightbox");
+        if (event.target == lightbox) {
+          closeLightbox();
         }
+      };
     </script>
   </body>
 </html>
