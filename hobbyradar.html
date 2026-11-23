@@ -1,37 +1,313 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HobbyRadar | Portfolio</title>
+    <title>HobbyRadar | UI/UX Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main class="container" style="margin-top: 50px;">
 
         <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
 
-        <section style="margin-top: 40px; margin-bottom: 120px;">
-            <h2>Projekt<br>HobbyRadar</h2>
+        <section class="split-section" style="margin-top: 40px; margin-bottom: 60px;">
+            <div class="split-text">
+                <h2>Hobby<br>Radar</h2>
+                <p class="subtitle" style="color: #666;">Location-based Social App • UI/UX Case Study</p>
 
-            <div class="card" style="height: auto; align-items: flex-start; padding: 60px 40px;">
-                <span class="subtitle" style="margin-bottom: 10px;">Work in Progress</span>
-                <h3 style="font-size: 2.2rem; margin-top: 0;">Diese Seite ist noch im Aufbau.</h3>
-                <p class="discription" style="max-width: 600px; margin-bottom: 30px; color: #aaa;">
-                    Die Case Study zu HobbyRadar wird gerade erarbeitet. Bald findest du hier
-                    den Designprozess, Wireframes und die finalen Screens aus Figma.
+                <p>
+                    Endloses Scrollen verbindet nicht automatisch – oft bleibt es bei passivem Konsum.
+                    HobbyRadar dreht das um: Eine Radar-Karte zeigt Hobby-Events im eigenen Umkreis,
+                    und die App ist darauf ausgelegt, dass man sie schnell wieder verlässt, um sich
+                    wirklich zu treffen. Entstanden ist das Konzept im Modul Medienprojekt 1 an der HKA,
+                    in einem Team aus vier Personen, von der ersten Idee bis zum klickbaren Prototyp.
                 </p>
-                <p style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                    Figma &bull; UI/UX &bull; Coming Soon
+
+                <ul class="tech-stack-list" style="margin-top: 30px;">
+                    <li><strong>Rolle</strong> Recherche, Entwürfe, Styleguide, Prototyp</li>
+                    <li><strong>Team</strong> 4 Personen, SoSe 2026</li>
+                    <li><strong>Tools</strong> Figma</li>
+                </ul>
+
+                <a href="https://www.figma.com/proto/zN9aSfGVDN3LjYHhyC6o6i/HobbyRadar?node-id=683-4610&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=683%3A4610&amp;page-id=0%3A1"
+                    class="button" style="margin-top: 40px;" target="_blank" rel="noopener">Prototyp testen &rarr;</a>
+            </div>
+
+            <div class="split-image">
+                <div class="print-presentation">
+                    <img src="hobbyradar-project/hero.png" alt="HobbyRadar App: Startseite, Radar-Karte und Eventdetail"
+                        style="width: 100%; height: auto;">
+                    <p
+                        style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">
+                        Startseite · Radar · Eventdetail
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUSGANGSLAGE -->
+        <section
+            style="margin-bottom: 60px; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 40px 0;">
+            <h3
+                style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85rem; color: #666;">
+                Ausgangslage: Vom Feed zum echten Treffen
+            </h3>
+            <p style="max-width: 800px; font-size: 1.05rem; line-height: 1.7; color: #aaa;">
+                Viele junge Menschen verbringen sehr viel Zeit am Smartphone und fühlen sich trotzdem einsam.
+                Social Media verliert zunehmend das Soziale und wird zum passiven Scrollen. Gleichzeitig
+                wünschen sich viele, weniger online zu sein. Zwei Personas haben unsere Entscheidungen geleitet:
+                Tim (20), der neu in der Stadt ist und Anschluss sucht, und Maria (68), die einen Kunstkurs
+                leitet, aber zu wenige Interessierte erreicht. Beide brauchen dasselbe: einen einfachen Weg
+                vom Bildschirm zu einem echten Treffen.
+            </p>
+        </section>
+
+        <!-- DER WEG -->
+        <section style="margin-bottom: 100px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Der Weg zum Prototyp</h2>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+
+                <div class="process-step">
+                    <h4>01. Research &amp; Konzept</h4>
+                    <p>Konkurrenzanalyse (Meetup, Tinder, Instagram), Zielgruppen, Personas und Customer Journeys für
+                        Teilnehmende und Planende.</p>
+                    <span class="mine"><strong>Mein Anteil:</strong> Recherche, Brainstorming</span>
+                </div>
+
+                <div class="process-step">
+                    <h4>02. Flow &amp; Wireframes</h4>
+                    <p>Die App-Logik als Flussdiagramm, dazu Wireframes für jeden Screen, inklusive Erfolgs- und
+                        Fehlerzuständen.</p>
+                    <span class="mine"><strong>Mein Anteil:</strong> Flows von der Anmeldung bis zur Bewertung</span>
+                </div>
+
+                <div class="process-step">
+                    <h4>03. Mockups &amp; Styleguide</h4>
+                    <p>Jeder von uns entwarf eine eigene Version der App. Aus allen Entwürfen entstand das finale
+                        Design, dazu
+                        ein Styleguide.</p>
+                    <span class="mine"><strong>Mein Anteil:</strong> eigener Entwurf inkl. Logo, Styleguide
+                        (gemeinsam)</span>
+                </div>
+
+                <div class="process-step">
+                    <h4>04. Prototyp</h4>
+                    <p>Ein klickbarer Figma-Prototyp mit Animationen und Transitions. Die Screens haben wir im Team
+                        aufgeteilt.
+                    </p>
+                    <span class="mine"><strong>Mein Anteil:</strong> ca. 20 Screens, Präsentationen</span>
+                </div>
+
+            </div>
+
+            <div class="print-presentation" style="margin-top: 60px;">
+                <img src="hobbyradar-project/process-research.png" alt="Personas Tim, Sarah und Maria"
+                    class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: auto;">
+                <p
+                    style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">
+                    Research: Personas
+                </p>
+            </div>
+
+            <div class="print-presentation" style="margin-top: 30px;">
+                <img src="hobbyradar-project/process-flow.png" alt="Flussdiagramm und Wireframes der App"
+                    class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: auto;">
+                <p
+                    style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">
+                    Flussdiagramm &amp; Wireframes
+                </p>
+            </div>
+
+        </section>
+
+        <!-- MEIN PART -->
+        <section style="margin-bottom: 100px; border-top: 1px solid #333; padding-top: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px; border-bottom: none; padding-bottom: 0;">
+                Mein Part: Nach der Anmeldung
+            </h2>
+
+            <p style="max-width: 800px; font-size: 1.05rem; line-height: 1.7; color: #aaa; margin-bottom: 50px;">
+                Im Prototyp habe ich die Screens vom Moment der erfolgreichen Anmeldung bis zur Bewertung
+                umgesetzt. Hier entscheidet sich, ob aus einem Radar-Treffer wirklich ein Treffen wird.
+                Zu jedem Flow gehören Erfolgs- und Fehlerzustände, etwa „Check-in fehlgeschlagen“ oder
+                „Bewertung fehlgeschlagen“, damit Nutzer:innen nie ohne Rückmeldung bleiben.
+            </p>
+
+            <div class="print-presentation">
+                <img src="hobbyradar-project/my-flows.png"
+                    alt="Screens QR-Code, Meine Events, Check-in und Event bewerten" onclick="openLightbox(this.src)"
+                    style="width: 100%; height: auto; cursor: pointer;">
+                <p
+                    style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">
+                    Teilen · Meine Events · Check-in · Bewerten
+                </p>
+            </div>
+
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="process-step">
+                    <h4>Teilen</h4>
+                    <p>Events lassen sich per QR-Code oder Link teilen. Der Link enthält nur die Event-ID und keine
+                        privaten
+                        Profildaten.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Verwalten</h4>
+                    <p>Eigene und angemeldete Events an einem Ort, filterbar nach anstehend, vergangen und angemeldet.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <h4>Check-in</h4>
+                    <p>Vor Ort bestätigt der Check-in die Teilnahme. Das ist der Moment, in dem aus dem Radar ein echtes
+                        Treffen
+                        wird.</p>
+                </div>
+                <div class="process-step">
+                    <h4>Bewerten</h4>
+                    <p>Nach dem Event gibt es Sterne, eine Kurzbewertung und Tags wie Atmosphäre oder Organisation. Das
+                        hilft
+                        der Community.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STYLEGUIDE -->
+        <section style="margin-bottom: 100px; border-top: 1px solid #333; padding-top: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px; border-bottom: none; padding-bottom: 0;">
+                Styleguide: Ein Look für alle Screens
+            </h2>
+
+            <p style="max-width: 800px; font-size: 1.05rem; line-height: 1.7; color: #aaa; margin-bottom: 40px;">
+                Damit vier Entwürfe zu einer App werden, haben wir gemeinsam einen Styleguide erarbeitet:
+                Farben, Typografie (Inter) und wiederverwendbare Komponenten wie Buttons, Eingabefelder,
+                Navigationsleiste und Event-Karte. Ruhige, helle Flächen schaffen Sicherheit, Grün markiert Handlungen.
+            </p>
+
+            <div class="swatch-grid">
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #067A5C;"></div>
+                    <div class="swatch-info"><strong>Radar Green</strong><span class="swatch-hex">#067A5C</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #E6F7EE;"></div>
+                    <div class="swatch-info"><strong>Mint</strong><span class="swatch-hex">#E6F7EE</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #F7FAF8;"></div>
+                    <div class="swatch-info"><strong>Background</strong><span class="swatch-hex">#F7FAF8</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #FFFFFF;"></div>
+                    <div class="swatch-info"><strong>Card</strong><span class="swatch-hex">#FFFFFF</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #D9E6DF;"></div>
+                    <div class="swatch-info"><strong>Border</strong><span class="swatch-hex">#D9E6DF</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #C33641;"></div>
+                    <div class="swatch-info"><strong>Error</strong><span class="swatch-hex">#C33641</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #17211F;"></div>
+                    <div class="swatch-info"><strong>Text Primary</strong><span class="swatch-hex">#17211F</span></div>
+                </div>
+                <div class="swatch">
+                    <div class="swatch-color" style="--c: #66736E;"></div>
+                    <div class="swatch-info"><strong>Text Secondary</strong><span class="swatch-hex">#66736E</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="print-presentation" style="margin-top: 50px;">
+                <img src="hobbyradar-project/styleguide.png"
+                    alt="Styleguide: Buttons, Eingabefelder, Navigation, Event-Karte" class="gallery-img"
+                    onclick="openLightbox(this.src)" style="width: 100%; height: auto;">
+                <p
+                    style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 15px;">
+                    UI-Komponenten
                 </p>
             </div>
         </section>
 
-        <a href="index.html" class="back-link">&larr; Zurück zur Übersicht</a>
+        <!-- ERGEBNIS & AUSBLICK -->
+        <section style="margin-bottom: 100px; border-top: 1px solid #333; padding-top: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px; border-bottom: none; padding-bottom: 0;">
+                Ergebnis &amp; Ausblick
+            </h2>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px;">
+
+                <div class="process-step">
+                    <h4>01. Ergebnis</h4>
+                    <p>
+                        Entstanden ist ein vollständiger, klickbarer Figma-Prototyp mit Animationen und
+                        Transitions, vom Onboarding über die Radar-Karte bis zur Bewertung.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <h4>02. Learnings</h4>
+                    <p>
+                        Mehrere Entwürfe nebeneinander machen das Ergebnis besser: Unsere finale Version
+                        hat von jedem Entwurf etwas mitgenommen. Außerdem habe ich gelernt, wie wichtig
+                        es ist, ein Projekt wirklich gemeinsam zu tragen.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <h4>03. Ausblick</h4>
+                    <p>
+                        Als Nächstes würden wir Onboarding, Karte, Anmeldung und Event-Erstellung mit
+                        echten Nutzer:innen testen und danach in Karlsruhe pilotieren. Erfolgskriterien:
+                        die Zeit bis zum passenden Event, die Anmeldequote und ob man nach einem Event
+                        wiederkommt.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- TODO später: Figma-Link eintragen -->
+            <a href="https://www.figma.com/proto/zN9aSfGVDN3LjYHhyC6o6i/HobbyRadar?node-id=683-4610&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=683%3A4610&amp;page-id=0%3A1"
+                class="button" style="margin-top: 40px;" target="_blank" rel="noopener">Prototyp testen &rarr;</a>
+        </section>
+
+        <a href="index.html" class="back-link" style="margin-top: 50px;">&larr; Zurück zur Übersicht</a>
 
     </main>
+
+    <div id="myLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
+    <script>
+        function openLightbox(imgSrc) {
+            document.getElementById("myLightbox").style.display = "block";
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            document.getElementById("myLightbox").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        window.onclick = function (event) {
+            var lightbox = document.getElementById("myLightbox");
+            if (event.target == lightbox) {
+                closeLightbox();
+            }
+        };
+    </script>
+
 </body>
+
 </html>

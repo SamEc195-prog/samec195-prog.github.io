@@ -518,3 +518,72 @@ a:hover {
   width: 120px; /* Sorgt dafür, dass die Liste schön bündig ist */
   display: inline-block;
 }
+
+/* --- PROZESS-SCHRITTE (HobbyRadar Case Study) --- */
+.process-step {
+  /* border-top: 1px solid #333; */
+  padding-top: 20px;
+}
+
+.process-step h4 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--heading-color);
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.process-step p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.process-step .mine {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.process-step .mine strong {
+  color: var(--heading-color);
+}
+
+/* --- FARBFELDER (Styleguide) --- */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.swatch {
+  background: var(--card-bg);
+  border: 1px solid #222;
+}
+
+.swatch-color {
+  height: 70px;
+  background-color: var(--c); /* Farbe kommt aus dem HTML */
+  border-bottom: 1px solid #222;
+}
+
+.swatch-info {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #aaa;
+}
+
+.swatch-info strong {
+  display: block;
+  color: var(--heading-color);
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.swatch-hex {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 1px;
+  color: #888;
+}
